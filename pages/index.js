@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
@@ -24,51 +24,52 @@ const QuizContainer = styled.div`
 `;
 
 export default function Home() {
-    const router = useRouter();
-    const [name, setName] = React.useState('');
+  const router = useRouter();
+  const [name, setName] = React.useState('');
 
-    return (
-        <QuizBackground backgroundImage={db.bg}>
-            <Head>
-                <title>{db.title}</title>
-            </Head>
-            <QuizContainer>
-                <QuizLogo/>
-                <Widget>
-                    <Widget.Header>
-                        <h1>{db.title}</h1>
-                    </Widget.Header>
-                    <Widget.Content>
-                        <p>{db.description}</p>
-                        <form onSubmit={function (infosDoEvento) {
-                            infosDoEvento.preventDefault();
-                            router.push(`/quiz?name=${name}`);
-                            console.log('Fazendo uma submissão por meio do react');
-                        }}
-                        >
-                            <Input
-                                name="nomeDoUsuario"
-                                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
-                                placeholder="Diz ai seu nome"
-                                value={name}
-                            />
-                            <Button type="submit" disabled={name.length === 0}>
-                                {`Jogar ${name}`}
-                            </Button>
-                        </form>
-                    </Widget.Content>
-                </Widget>
+  const jogar = (event) => {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  };
 
-                <Widget>
-                    <Widget.Content>
-                        <h1>Quizes da Galera</h1>
+  return (
+    <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>{db.title}</title>
+      </Head>
+      <QuizContainer>
+        <QuizLogo />
+        <Widget>
+          <Widget.Header>
+            <h1>{db.title}</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>{db.description}</p>
+            {/* eslint-disable-next-line func-names */}
+            <form onSubmit={jogar}>
+              <Input
+                name="nomeDoUsuario"
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Diz ai seu nome para jogar"
+                value={name}
+              />
+              <Button type="submit" disabled={name.length === 0}>
+                {`Jogar ${name}`}
+              </Button>
+            </form>
+          </Widget.Content>
+        </Widget>
 
-                        <p>lorem ipsum dolor sit amet...</p>
-                    </Widget.Content>
-                </Widget>
-                <Footer/>
-            </QuizContainer>
-            <GitHubCorner projectUrl="https://github.com/felipeseolin"/>
-        </QuizBackground>
-    );
+        <Widget>
+          <Widget.Content>
+            <h1>Quizes da Galera</h1>
+
+            <p>lorem ipsum dolor sit amet...</p>
+          </Widget.Content>
+        </Widget>
+        <Footer />
+      </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/felipeseolin" />
+    </QuizBackground>
+  );
 }
