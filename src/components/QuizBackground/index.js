@@ -13,8 +13,9 @@ const QuizBackground = styled.div`
       content: "";
       background-size: cover;
       background-position: center;
-      background-image: linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
-      url(${({ backgroundImage }) => backgroundImage});
+      background-image:
+              linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
+              url(${({ backgroundImage }) => backgroundImage});
       display: block;
       width: 100%;
       height: 210px;
@@ -24,7 +25,7 @@ const QuizBackground = styled.div`
       right: 0;
       z-index: 1;
     }
-
+    
     *:first-child {
       position: relative;
       z-index: 10;

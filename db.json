@@ -1,7 +1,9 @@
 {
-  "bg": "static/images/geography.jpg",
+  "bg": "/static/images/geography.jpg",
   "title": "GeoQuiz",
   "description": "Teste os seus conhecimentos em geografia!",
+  "defaultLoading": "https://assets4.lottiefiles.com/packages/lf20_l70cmyuz.json",
+  "globeLoading": "https://assets4.lottiefiles.com/packages/lf20_gEfXtY.json",
   "questions": [
     {
       "image": "https://flagcdn.com/w2560/za.png",

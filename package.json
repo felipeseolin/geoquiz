@@ -9,6 +9,7 @@
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.0.0",
     "framer-motion": "^3.2.2-rc.1",
     "next": "latest",
     "prop-types": "^15.7.2",
