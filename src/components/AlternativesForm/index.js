@@ -4,10 +4,12 @@ const AlternativesForm = styled.form`
   label {
     &[data-selected="true"] {
       background-color: ${({ theme }) => theme.colors.primary};
-      &[data-status="SUCCESS"] {
+    }
+    &[data-submitted="true"] {
+      &[data-correct="true"] {
         background-color: ${({ theme }) => theme.colors.success};
       }
-      &[data-status="ERROR"] {
+      &[data-correct="false"] {
         background-color: ${({ theme }) => theme.colors.wrong};
       }
     }

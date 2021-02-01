@@ -18,6 +18,31 @@
       ]
     },
     {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Thailand_%28orthographic_projection%29.svg/270px-Thailand_%28orthographic_projection%29.svg.png",
+      "title": "Qual é esse país?",
+      "description": "Se localiza no continente asiático",
+      "answer": 0,
+      "alternatives": [
+        "Tailândia",
+        "Japão",
+        "Taiwan",
+        "Laos",
+        "Vietnã"
+      ]
+    },
+    {
+      "image": "https://flagcdn.com/w2560/gb.png",
+      "title": "Quais países compõe o Reino Unido?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Inglaterra",
+        "Inglaterra, Escócia e País de Gales",
+        "Inglaterra e País de Gales",
+        "Inglaterra, Escócia, País de Gales e Irlanda do Norte"
+      ]
+    },
+    {
       "image": "https://flagcdn.com/w2560/sk.png",
       "title": "Esta bandeira pertence a qual país?",
       "description": "",
@@ -30,39 +55,27 @@
       ]
     },
     {
-      "image": "https://flagcdn.com/w2560/de.png",
-      "title": "Esta bandeira pertence a qual país?",
-      "description": "",
-      "answer": 0,
-      "alternatives": [
-        "Alemanha",
-        "Dinamarca",
-        "Croácia",
-        "Bélgica"
-      ]
-    },
-    {
       "image": "https://flagcdn.com/w2560/in.png",
       "title": "Esta bandeira pertence a qual país?",
       "description": "",
-      "answer": 0,
+      "answer": 1,
       "alternatives": [
         "Vaticano",
-        "India",
+        "Índia",
         "Holanda",
         "Itália"
       ]
     },
     {
-      "image": "https://flagcdn.com/w2560/in.png",
-      "title": "Esta bandeira pertence a qual país?",
+      "image": "https://media.giphy.com/media/vqBxtk1DyKHu0/giphy.gif",
+      "title": "Qual o idioma oficial da República Dominicana?",
       "description": "",
-      "answer": 0,
+      "answer": 1,
       "alternatives": [
-        "Vaticano",
-        "India",
-        "Holanda",
-        "Itália"
+        "Dominicano",
+        "Espanhol",
+        "Inglês",
+        "Francês"
       ]
     }
   ],

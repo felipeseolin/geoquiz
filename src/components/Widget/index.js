@@ -67,6 +67,18 @@ Widget.Topic = styled.a`
   &:focus {
     opacity: .5;
   }
+
+  &[data-question-correct="true"] {
+    background-color: ${({ theme }) => theme.colors.success};
+  }
+  
+  &[data-question-correct="false"] {
+    background-color: ${({ theme }) => theme.colors.wrong};
+  }
+  
+  &[data-question-selected="true"] {
+    opacity: 0.2;
+  }
 `;
 
 export default Widget;

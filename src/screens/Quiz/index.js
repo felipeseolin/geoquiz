@@ -20,6 +20,7 @@ export default function QuizScreen({
 }) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([]);
+  const [answers, setAnswers] = useState([]);
   const totalQuestions = externalQuestions.length;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
@@ -35,6 +36,13 @@ export default function QuizScreen({
     setResults([
       ...results,
       result,
+    ]);
+  };
+
+  const addAnswer = (answer) => {
+    setAnswers([
+      ...answers,
+      answer,
     ]);
   };
 
@@ -59,13 +67,19 @@ export default function QuizScreen({
               totalQuestions={totalQuestions}
               onSubmit={handleSubmitQuiz}
               addResult={addResult}
+              addAnswer={addAnswer}
             />
             )
         }
         {screenState === screenStates.LOADING && <LoadingWidget loadingSrc={loadingSrc} />}
         {
           screenState === screenStates.RESULT
-          && <ResultWidget results={results} playerName={playerName} />
+          && <ResultWidget
+              results={results}
+              playerName={playerName}
+              questions={externalQuestions}
+              answers={answers}
+            />
         }
       </QuizContainer>
     </QuizBackground>

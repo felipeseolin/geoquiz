@@ -13,6 +13,7 @@ export default function QuestionWidget({
   totalQuestions,
   onSubmit,
   addResult,
+  addAnswer,
 }) {
   const [selectedAlternative, setSelectedAlternative] = useState(undefined);
   const [isQuestionSubmitted, setIsQuestionSubmitted] = useState(false);
@@ -53,6 +54,7 @@ export default function QuestionWidget({
             setIsQuestionSubmitted(true);
             setTimeout(() => {
               addResult(isCorrect);
+              addAnswer(selectedAlternative);
               setIsQuestionSubmitted(false);
               setSelectedAlternative(undefined);
               onSubmit();
@@ -77,7 +79,8 @@ export default function QuestionWidget({
                 initial="hidden"
                 animate="show"
                 data-selected={isSelected}
-                data-status={isQuestionSubmitted && alternativeStatus}
+                data-submitted={isQuestionSubmitted}
+                data-correct={alternativeIndex === question.answer}
               >
                 <input
                   style={{ display: 'none' }}
